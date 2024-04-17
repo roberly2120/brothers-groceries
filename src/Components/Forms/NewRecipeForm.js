@@ -23,7 +23,8 @@ export default function NewRecipeForm() {
         async function fetchPreviousIngredients() {
             const data = await readDocument('previousIngredients', 'z0Zawle8cpHubAfyXEcy')
             if (data) {
-                setPrevIngredientsFromDB(data.ingredients)
+                const sortedData = data.ingredients.sort((a, b) => a.localeCompare(b));
+                setPrevIngredientsFromDB(sortedData)
             } else {
                 console.log('No data found')
             }
