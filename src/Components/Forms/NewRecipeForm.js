@@ -3,7 +3,7 @@ import { Heading, HStack, Button, Input, VStack, Flex, Text, List, InputGroup, I
 import { AddIcon } from '@chakra-ui/icons'; // Import the AddIcon for the plus icon
 import PreviousIngredientsList from './PreviousIngredientsList';
 import { readDocument, updateDocument, createDocument } from '../../Data/firestoreOperations';
-
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -14,6 +14,7 @@ export default function NewRecipeForm() {
     const [newIngredient, setNewIngredient] = useState("");
     const ingredientInputRef = useRef(null);
     const [prevIngredientsFromDB, setPrevIngredientsFromDB] = useState([]); // This will be used to store the ingredients from the database
+    const navigate = useNavigate();
     
 
     // Fetch the previous ingredients from the database using johno's recipe id
@@ -65,6 +66,7 @@ export default function NewRecipeForm() {
         // check previous ingredients to see if the ingredient is already in the database
         const uniqueNewIngredients = newRecipe.ingredients.filter(ingredient => !prevIngredientsFromDB.includes(ingredient));
         const updateDocRef = await updateDocument('previousIngredients', 'z0Zawle8cpHubAfyXEcy', { ingredients: [...prevIngredientsFromDB, ...uniqueNewIngredients] });
+        navigate('/recipes');
         
     }
 

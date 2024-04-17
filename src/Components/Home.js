@@ -8,7 +8,7 @@ export default function Home() {
 
     return (
         <>
-            <Center>
+            <Center mt="15px">
                 <Button onClick={() => navigate('/new-recipe')} colorScheme="blue">Add New Recipe</Button>
             </Center>
         </>
