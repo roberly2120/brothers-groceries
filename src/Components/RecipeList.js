@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { readDocuments } from "../Data/firestoreOperations";
 import { Spinner, Center, Flex, Button, Text, Box } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 export default function RecipeList() {
     const [recipes, setRecipes] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchRecipes() {
@@ -17,6 +19,10 @@ export default function RecipeList() {
         }
         fetchRecipes();
     }, [])
+
+    const handleViewRecipe = async (id) => {
+        navigate(`/recipes/${id}`);
+    }
 
     if (recipes.length === 0) {
         return (
@@ -33,7 +39,7 @@ export default function RecipeList() {
                         <Box w="full" p={4} borderWidth="1px" borderRadius="lg" overflow="hidden" mb={4}>
                             <Flex justify="space-between" w="full">
                                 <Text>{recipe.name}</Text>
-                                <Button>View</Button>
+                                <Button onClick={() => handleViewRecipe(recipe.id)}>View</Button>
                             </Flex>
                         </Box>
                     )
