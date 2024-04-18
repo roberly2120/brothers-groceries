@@ -72,7 +72,7 @@ export default function NewRecipeForm() {
     }
 
     return (
-        <Flex w="100%" h="100vh" p={4} align="flex-start" justify="center" mt="20px">
+        <Flex w="100%" h="80vh" p={4} align="flex-start" justify="center" mt="20px">
             <VStack spacing={4} maxW="lg" w="full">
                 {!nameSubmitted ? (
                     <>

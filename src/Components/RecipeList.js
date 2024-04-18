@@ -36,7 +36,7 @@ export default function RecipeList() {
             <Flex direction="column" align="center" mt="15px" w="full">
                 {recipes.map((recipe, index) => {
                     return (
-                        <Box w="full" p={4} borderWidth="1px" borderRadius="lg" overflow="hidden" mb={4}>
+                        <Box w="full" p={4} borderWidth="1px" borderRadius="lg" overflow="hidden" mb={4} key={index}>
                             <Flex justify="space-between" w="full">
                                 <Text>{recipe.name}</Text>
                                 <Button onClick={() => handleViewRecipe(recipe.id)}>View</Button>
