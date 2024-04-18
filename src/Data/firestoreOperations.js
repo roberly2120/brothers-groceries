@@ -44,7 +44,7 @@ export const updateDocument = async (collectionName, docId, newData) => {
     try {
         const docRef = doc(db, collectionName, docId);
         await updateDoc(docRef, newData);
-        console.log("Document successfully updated!");
+        // console.log("Document successfully updated!");
     } catch (error) {
         console.error("Error updating document: ", error);
         throw error;
