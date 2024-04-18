@@ -34,6 +34,7 @@ export default function RecipeList() {
     return (
         <>
             <Flex direction="column" align="center" mt="15px" w="full">
+            <Button onClick={() => navigate('/new-recipe')} colorScheme="blue" mb="15px">Add New Recipe</Button>
                 {recipes.map((recipe, index) => {
                     return (
                         <Box w="full" p={4} borderWidth="1px" borderRadius="lg" overflow="hidden" mb={4} key={index}>
