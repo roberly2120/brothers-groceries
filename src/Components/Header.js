@@ -35,6 +35,7 @@ function Header() {
                     <MenuItem onClick={() => navigate('/recipes')} {...menuItemStyles}>Recipes</MenuItem>
                     <MenuItem onClick={() => navigate('/history')} {...menuItemStyles}>Recipe History</MenuItem>
                     <MenuItem onClick={() => navigate('/recipe-select')} {...menuItemStyles}>Build your Week</MenuItem>
+                    <MenuItem onClick={() => navigate('/grocery-list')} {...menuItemStyles}>Grocery List</MenuItem>
                 </Stack>
             </MenuList>
         </Menu>
@@ -53,6 +54,9 @@ function Header() {
             </Link>
             <Link href="/recipe-select" mr={5} fontSize="xl" p={2} borderRadius="md" _hover={{ textDecoration: 'none', boxShadow: '0 0 0 1px white' }}>
                 Build your Week
+            </Link>
+            <Link href="/grocery-list" mr={5} fontSize="xl" p={2} borderRadius="md" _hover={{ textDecoration: 'none', boxShadow: '0 0 0 1px white' }}>
+                Grocery List
             </Link>
         </Box>
     );

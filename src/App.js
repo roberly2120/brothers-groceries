@@ -7,6 +7,7 @@ import Footer from './Components/Footer';
 import WeekofRecipesSelection from './Components/WeekofRecipesSelection';
 import RecipeList from './Components/RecipeList';
 import GroceryList from './Components/GroceryList';
+import ShoppingList from './Components/ShoppingList';
 import ViewRecipe from './Components/ViewRecipe';
 import { Route, Routes } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/recipes/:id" element={<ViewRecipe />} />
           <Route path="/recipe-select" element={<WeekofRecipesSelection />} />
           <Route path="/grocery-list" element={<GroceryList />} />
+          <Route path="/shopping-list" element={<ShoppingList />} />
         </Routes>
       </Box>
       <Footer />
